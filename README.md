@@ -38,6 +38,22 @@ Requirements:
 * MySQL Database (With 3 tables setup [with these structures](https://github.com/LittleBigBug/simple-blog-system/blob/master/dbstructure.sql))
 * A mail server on your PHP server (Or, you can change lines 183 - 205 in [index.php](https://github.com/LittleBigBug/simple-blog-system/blob/master/index.php) to work with an external [SMTP](https://github.com/PHPMailer/PHPMailer/blob/master/examples/smtp.phps) server)
 
+To set up what database to use as well as username and password, you need to create a new file in inc/ called dbsetup.php
+
+For obvious reasons, I have removed mine. An Example of this file would be:
+
+```php
+<?php
+
+require("_sec.php");
+
+DB::$user = "username_here";
+DB::$password = "password_here";
+DB::$dbName = "database_name_here";
+
+?>
+```
+
 At the moment, any account created will by default have rank 0. This means they _can not make new posts_ you need to manually edit their rank in the mysql database.
 
 Rank 0 = User
