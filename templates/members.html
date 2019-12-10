@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="{{ app_root }}/css/feed.css?t={{ time }}" />
+
+<div class="container feed">
+  <h2>All Members</h2>
+  {% for member in bmembers %}
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">{{ member.username }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.joined }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted"><a href="{{ app_root }}/user/{{ member.ID }}">Profile & Posts</a></h6>
+      </div>
+    </div>
+  {% else %}
+    <p>There are no members.</p>
+  {% endfor %}
+</div>

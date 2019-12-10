@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="{{ app_root }}/css/emailsent.css" />
+
+{% if success %}
+  <h2>Success!</h2>
+  <p>Thanks {{ username }}! Your account has been verified and activated.</p>
+  <p>Want to start? <a href="{{ app_root }}/login">Login now!</a></p>
+{% else %}
+  <h2>Uh-oh</h2>
+  <p>It looks like the verification link you followed is invalid. Make sure you followed the correct link.</p>
+  <p>Your verification record may have been deleted to reserve space. Try to register again. If the problem persists, please email admin@yasfu.net with details.</p>
+{% endif %}

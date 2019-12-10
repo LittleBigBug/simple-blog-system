@@ -1,0 +1,40 @@
+<div id="container blogeditor" style="max-width:85%;margin:auto;margin-top:20px;margin-bottom:20px;">
+  <h2>
+  {% if newpost %}
+    Create New Post
+  {% else %}
+    Edit Post
+  {% endif %}
+  </h2>
+
+  <p class="text-info">
+    Scripts and external stylesheets will be automatically filtered.
+  </p>
+
+  <p class="text-danger">
+    {{ error }}
+  </p>
+
+  {% if postlocation is null %}
+    {% set postlocation = "new" %}
+  {% endif %}
+
+  <form action="{{ app_root }}/post/{{postlocation}}" method="POST">
+    <input type="text" class="form-control" name="title" id="title" aria-describedby="titleHelp" placeholder="Post Title" value="{{ ptitle }}">
+    <textarea name="cont" id="cont"></textarea>
+    <button type="submit" class="btn btn-primary" style="margin-top:20px;">
+      {% if newpost %}
+        Create
+      {% else %}
+        Edit
+      {% endif %}
+    </button>
+  </form>
+</div>
+
+<script src="{{ app_root }}/js/vendor/ckeditor/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace("cont");
+  CKEDITOR.instances.cont.setData(unescape("{{ blogcontent|e('js') }}"));
+</script>
+<link rel="stylesheet" type="text/css" href="{{ app_root }}/css/editpost.css?t={{ time }}" />

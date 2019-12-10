@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css" href="{{ app_root }}/css/loginregis.css?t={{ time|e }}" />
+
+<div class="container">
+  <div class="d-flex justify-content-center fbox">
+    <form action="{{ app_root }}/login/" method="POST">
+      <h3>Login</h3>
+      <p>Need an account? <a href="{{ app_root }}/register">Register here!</a></p>
+
+      <p class="text-danger">
+        {{ error }}
+      </p>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Username or Email</label>
+        <input type="login" class="form-control" name="userem" id="userem" aria-describedby="emailHelp" placeholder="Email or Username" value="{{ userem }}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+</div>

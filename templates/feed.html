@@ -1,0 +1,19 @@
+<link rel="stylesheet" type="text/css" href="{{ app_root }}/css/feed.css" />
+
+<div class="container feed">
+  <h2>All Recent Posts</h2>
+  {% for post in bposts %}
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.timeago }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">by <a href="{{ app_root }}/user/{{ post.author.ID }}">{{ post.author.username }}</a></h6>
+        <p class="card-text">
+          {{ post.contentcut|raw }}<a href="{{ app_root }}/post/view/{{ post.ID }}"> Read More</a>
+        </p>
+      </div>
+    </div>
+  {% else %}
+    <p>There are no blog posts.</p>
+  {% endfor %}
+</div>

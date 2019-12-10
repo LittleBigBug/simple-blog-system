@@ -1,0 +1,73 @@
+<link rel="stylesheet" type="text/css" href="{{ app_root }}/css/post.css" />
+
+<div class="container blogpost">
+  <h1>{{ user.username }}</h1>
+  <p class="lead">{{ user.realname }}</p>
+  <p class="{{ user.rank.rankCol }}">{{ user.rank.rank }}</p>
+
+  <hr/>
+
+  <p>
+    Joined {{ user.joined }}
+  </p>
+
+  <hr/>
+
+  {% for post in user.posts %}
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.time }}</h6>
+        <p class="card-text">
+          {{ post.content|raw }}<br/><a href="{{ app_root }}/post/view/{{ post.ID }}">Go To Post</a>
+        </p>
+      </div>
+    </div>
+  {% else %}
+    <p>This user has no blog posts.</p>
+  {% endfor %}
+
+  <!--
+  <hr/>
+
+  <a href="#" style="display:none;" id="reply-base">Post a Comment</a>
+
+  <div class="card my-4 replybox">
+    <h5 class="card-header">Leave a Comment</h5>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <input type="hidden" name="replyto" value="none" id="replytocomnt">
+        <button type="submit" class="btn btn-primary">Post Comment</button>
+      </form>
+    </div>
+  </div>
+
+  {% for comment in comments %}
+    <div class="media mb-4">
+      <img class="d-flex mr-3 rounded-circle" alt="" src="http://placehold.it/100x100" />
+      <div class="media-body">
+        <h5 class="mt-0"><a href="{{ app_root }}/user/{{ comment.authorID }}">{{ comment.authorname }}</a></h5>
+        {{ comment.cont }}
+        <a href="#" id="reply-{{ comment.ID }}">Reply</a>
+        {% for resp in comment.responces %}
+          <div class="media mt-4">
+            <img class="d-flex mr-3 rounded-circle" alt="" src="http://placehold.it/100x100" />
+            <div class="media-body">
+              <h5 class="mt-0"><a href="{{ app_root }}/user/{{ resp.authorID }}">{{ resp.authorname }}</a></h5>
+              {{ resp.cont }}
+              <a href="#" id="reply-res-{{ resp.ID }}">Reply</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <p>No comments just yet!</p>
+  {% endfor %}-->
+</div>
+
+<script src="{{ app_root }}/js/regex_jquery.js"></script>
+<script src="{{ app_root }}/js/postcomments.js"></script>

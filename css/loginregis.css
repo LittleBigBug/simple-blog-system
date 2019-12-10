@@ -1,0 +1,10 @@
+form {
+  min-width: 80%;
+  max-width: 80%;
+}
+
+.fbox {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+}
