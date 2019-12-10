@@ -36,7 +36,7 @@ Requirements:
 
 * PHP 5.3+ Server with Apache (If you use NGIX you need to use [this web.config](https://gist.githubusercontent.com/bramus/5332525/raw/49e9658772c8342d6f64e50484ae9265cd37bb2c/web.config))
 * MySQL Database (With 3 tables setup [with these structures](https://github.com/LittleBigBug/simple-blog-system/blob/master/dbstructure.sql))
-* A mail server on your PHP server (Or, you can change lines 183 - 205 in [index.php](https://github.com/LittleBigBug/simple-blog-system/blob/master/index.php) to work with an external [SMTP](https://github.com/PHPMailer/PHPMailer/blob/master/examples/smtp.phps) server)
+* A mail server on your PHP server (Or, you can change lines 183 - 205 in [index.php](https://github.com/LittleBigBug/simple-blog-system/blob/master/index.php#L183) to work with an external [SMTP](https://github.com/PHPMailer/PHPMailer/blob/master/examples/smtp.phps) server)
 
 To set up what database to use as well as username and password, you need to create a new file in inc/ called dbsetup.php
 
@@ -65,4 +65,4 @@ Rank 2 = Administrator (Can Delete & Edit other's posts)
 ## Security
 
 For the most part I've tried to take out any <script> <style> or <link> tags in any posts. However I have not tested this 100% for security so it may be unideal for public use and may be prone to attacks.
-Other than that, I have added a delay in which how fast a user can post or do any action. Right now it is 300 seconds for new posts and 20 for editing posts and you may change it on lines 325 (new posts) and 439 (editing posts) in [index.php](https://github.com/LittleBigBug/simple-blog-system/blob/master/index.php).
+Other than that, I have added a delay in which how fast a user can post or do any action. Right now it is 300 seconds for new posts and 20 for editing posts and you may change it on lines [325](https://github.com/LittleBigBug/simple-blog-system/blob/master/index.php#L325) (new posts) and [439](https://github.com/LittleBigBug/simple-blog-system/blob/master/index.php#L439) (editing posts) in index.php.
