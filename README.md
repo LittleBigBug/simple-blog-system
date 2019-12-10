@@ -54,7 +54,7 @@ DB::$dbName = "database_name_here";
 ?>
 ```
 
-At the moment, any account created will by default have rank 0. This means they _can not make new posts_ you need to manually edit their rank in the mysql database.
+At the moment, any account created will by default have rank 0. This means they _can not make new posts_, so you need to manually edit their rank in the mysql database.
 
 Rank 0 = User
 
