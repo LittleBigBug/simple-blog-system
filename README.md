@@ -3,6 +3,8 @@
 I wrote the base for this in a couple of days, and slowly extended it more over time. I needed a progress blog for school to show what I have done in the class.
 A few other students made an account here too.
 
+[Here is that website if you would like a live demo](https://yasfu.net/blogs)
+
 ## Features
 
 * Register & login
