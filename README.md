@@ -35,7 +35,7 @@ If you would like to use it for your own, you're welcome to.
 Requirements:
 
 * PHP 5.3+ Server with Apache (If you use NGIX you need to use [this web.config](https://gist.githubusercontent.com/bramus/5332525/raw/49e9658772c8342d6f64e50484ae9265cd37bb2c/web.config))
-* MySQL Database (With 3 tables setup [with these structures](https://github.com/LittleBigBug/simple-blog-system/blob/master/dbstructure.sql)
+* MySQL Database (With 3 tables setup [with these structures](https://github.com/LittleBigBug/simple-blog-system/blob/master/dbstructure.sql))
 * A mail server on your PHP server (Or, you can change lines 183 - 205 in [index.php](https://github.com/LittleBigBug/simple-blog-system/blob/master/index.php) to work with an external [SMTP](https://github.com/PHPMailer/PHPMailer/blob/master/examples/smtp.phps) server)
 
 At the moment, any account created will by default have rank 0. This means they _can not make new posts_ you need to manually edit their rank in the mysql database.
